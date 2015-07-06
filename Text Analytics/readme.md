@@ -1,3 +1,3 @@
 # Text Analytics
 
-Quick solution for easy [Skilleo challenge](https://skilleo.me/challenges/text-analytics).
+Quick solution for [Skilleo challenge](https://skilleo.me/challenges/text-analytics).
