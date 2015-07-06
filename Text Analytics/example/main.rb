@@ -1,4 +1,4 @@
-load 'TextAnalyzer.rb'
+load '../src/TextAnalyzer.rb'
 
 puts TextAnalyzer.words('Here is a string')                              # => ['here', 'is', 'a', 'string']
 puts TextAnalyzer.lonelyWords('this is a lonely sentence').length        # => 5

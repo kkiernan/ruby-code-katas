@@ -10,8 +10,14 @@ class TextAnalyzer
     ##
     # Get the letters in a string (converted to downcase).
     # 
-    def self.letters(string)
-        return string.downcase.scan(/[A-z]/)
+    def self.letters(string, unique = false)
+        letters = string.downcase.scan(/[A-z]/)
+
+        if unique
+            return letters.uniq
+        end
+
+        return letters
     end
 
     ##
@@ -23,19 +29,21 @@ class TextAnalyzer
     end
 
     ##
-    # Get the words in a string that appear at least two times.
+    # Get the words in a string that appear at least the minimum number of
+    # times specified.
     # 
-    def self.repeatingWords(string)
+    def self.repeatingWords(string, min = 2)
         words = self.words(string)
-        return words.uniq.select { |word| words.count(word) >= 2 }
+        return words.uniq.select { |word| words.count(word) >= min }
     end
 
     ##
-    # Get the letters in a string that appear at least three times.
+    # Get the letters in a string that appear at least the minimum number
+    # of times specified.
     # 
-    def self.repeatingLetters(string)
+    def self.repeatingLetters(string, min = 3)
         letters = self.letters(string)
-        return letters.uniq.select { |letter| letters.count(letter) >= 3 }
+        return letters.uniq.select { |letter| letters.count(letter) >= min }
     end
 
     ##
